@@ -53,10 +53,10 @@ function checkPasswordStrength() {
         strengthDisplay.textContent = "Сложный пароль";
         suggestions.innerHTML = "";
     } else if (strength >= 3) {
-        strengthDisplay.textContent = "Средняя сложность.";
+        strengthDisplay.textContent = "Средняя сложность";
         suggestions.innerHTML = "<li>Добавьте символы или цифры для улучшения сложности.</li>";
     } else {
-        strengthDisplay.textContent = "Пароль слабый.";
+        strengthDisplay.textContent = "Пароль слабый";
         suggestions.innerHTML = "<li>Увеличьте длину пароля.</li><li>Добавьте заглавные буквы, цифры и символы.</li>";
     }
 }
