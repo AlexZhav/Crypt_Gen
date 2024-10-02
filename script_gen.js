@@ -62,10 +62,3 @@ function checkPasswordStrength() {
 }
 
 document.getElementById('check-btn').addEventListener('click', checkPasswordStrength);
-<input type="text" id="generated-password" readonly>
-<div class="copy-container">
-    <button id="copy-btn">
-        <span class="tooltip-text">Скопировать пароль</span>
-        &#128203; <!-- Иконка копирования -->
-    </button>
-</div>
