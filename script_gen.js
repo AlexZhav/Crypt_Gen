@@ -61,12 +61,3 @@ function checkPasswordStrength() {
     }
 }
 
-document.getElementById('check-btn').addEventListener('click', checkPasswordStrength);
-document.getElementById('copy-btn').addEventListener('click', function() {
-    const password = document.getElementById('generated-password');
-    password.select();
-    password.setSelectionRange(0, 99999); // Для мобильных устройств
-    navigator.clipboard.writeText(password.value).then(() => {
-        alert('Пароль скопирован в буфер обмена');
-    });
-});
