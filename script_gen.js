@@ -71,4 +71,9 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     });
 });
 const inputField = getElementById('password-input');
-const submitButton = document.getElementById('submitButton')
+const submitButton = document.getElementById('check-btn');
+inputField.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        check-btn.click();
+    }
+});
