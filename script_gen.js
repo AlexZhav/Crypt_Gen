@@ -69,10 +69,10 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     navigator.clipboard.writeText(password.value).then(() => {
     });
 });
-const passwordinput = getElementById('password-input');
-const checkbtn = document.getElementById('check-btn');
-password-input.addEventListener('keydown', function(event) {
+const passwordInput = document.getElementById('password-input');
+const checkBtn = document.getElementById('check-btn');
+passwordInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        check-btn.click();
+        checkBtn.click();
     }
 });
