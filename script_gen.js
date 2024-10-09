@@ -70,3 +70,5 @@ document.getElementById('copy-btn').addEventListener('click', function() {
         alert('Пароль скопирован в буфер обмена');
     });
 });
+const inputField = getElementById('password-input');
+const submitButton = document.getElementById('submitButton')
