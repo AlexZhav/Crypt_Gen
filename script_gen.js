@@ -67,7 +67,6 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     password.select();
     password.setSelectionRange(0, 99999); // Для мобильных устройств
     navigator.clipboard.writeText(password.value).then(() => {
-        alert('Пароль скопирован в буфер обмена');
     });
 });
 const inputField = getElementById('password-input');
