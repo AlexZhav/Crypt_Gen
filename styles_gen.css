@@ -172,3 +172,12 @@ button:hover {
     visibility: visible;
     opacity: 1;
 }
+#password-strength-bar {
+    height: 10px;
+    width: 0;
+    background-color: red;
+    margin-top: 10px;
+    transition: width 0.5s, background-color 0.5s;
+}
+
+/* Остальные стили остаются прежними */
