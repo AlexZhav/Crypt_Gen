@@ -1,4 +1,4 @@
-// Генератор 
+// Генератор
 function generatePassword() {
     const length = document.getElementById('length').value;
     const useUppercase = document.getElementById('uppercase').checked;
@@ -23,11 +23,12 @@ function generatePassword() {
     }
 
     document.getElementById('generated-password').value = password;
+    updateStrengthBar(password);
 }
 
 document.getElementById('generate-btn').addEventListener('click', generatePassword);
 
-// Проверка 
+// Проверка
 function checkPasswordStrength() {
     const password = document.getElementById('password-input').value;
     const strengthDisplay = document.getElementById('password-strength');
@@ -48,7 +49,6 @@ function checkPasswordStrength() {
     if (regexes.numbers.test(password)) strength++;
     if (regexes.symbols.test(password)) strength++;
 
-    // Отображение сложности 
     if (strength === 5) {
         strengthDisplay.textContent = "Сложный пароль";
         suggestions.innerHTML = "";
@@ -62,17 +62,45 @@ function checkPasswordStrength() {
 }
 
 document.getElementById('check-btn').addEventListener('click', checkPasswordStrength);
-document.getElementById('copy-btn').addEventListener('click', function() {
+
+document.getElementById('copy-btn').addEventListener('click', function () {
     const password = document.getElementById('generated-password');
     password.select();
-    password.setSelectionRange(0, 99999); // Для мобильных устройств
+    password.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(password.value).then(() => {
+        alert('Пароль скопирован');
     });
 });
-const passwordInput = document.getElementById('password-input');
-const checkBtn = document.getElementById('check-btn');
-passwordInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        checkBtn.click();
+
+function updateStrengthBar(password) {
+    const strengthBar = document.getElementById('password-strength-bar');
+    const strength = checkPasswordStrengthValue(password);
+
+    strengthBar.style.width = strength * 20 + '%';
+    if (strength < 2) {
+        strengthBar.style.backgroundColor = 'red';
+    } else if (strength < 4) {
+        strengthBar.style.backgroundColor = 'yellow';
+    } else {
+        strengthBar.style.backgroundColor = 'green';
     }
-});
+}
+
+function checkPasswordStrengthValue(password) {
+    let strength = 0;
+    const regexes = {
+        length: /.{8,}/,
+        uppercase: /[A-Z]/,
+        lowercase: /[a-z]/,
+        numbers: /[0-9]/,
+        symbols: /[!@#$%^&*(),.?":{}|<>]/
+    };
+
+    if (regexes.length.test(password)) strength++;
+    if (regexes.uppercase.test(password)) strength++;
+    if (regexes.lowercase.test(password)) strength++;
+    if (regexes.numbers.test(password)) strength++;
+    if (regexes.symbols.test(password)) strength++;
+
+    return strength;
+}
