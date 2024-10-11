@@ -179,5 +179,6 @@ button:hover {
     margin-top: 10px;
     transition: width 0.5s, background-color 0.5s;
 }
-
-/* Остальные стили остаются прежними */
+.output-conteiner {
+    display:flex
+}
