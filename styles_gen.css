@@ -179,6 +179,52 @@ button:hover {
     margin-top: 10px;
     transition: width 0.5s, background-color 0.5s;
 }
-.output-conteiner {
-    display:flex
+.output-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#generated-password {
+    width: 100%;
+}
+
+#copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    position: relative;
+}
+
+.tooltip-text {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#copy-btn:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+#password-strength-bar {
+    height: 10px;
+    width: 0;
+    background-color: red;
+    margin-top: 10px;
+    transition: width 0.5s, background-color 0.5s;
+}
+
+/* Отступ между полем для ввода пароля и советами */
+#password-checker #suggestions {
+    margin-top: 15px;
 }
