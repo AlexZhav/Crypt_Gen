@@ -31,20 +31,27 @@
                 <label><input type="checkbox" id="symbols"> Символы (!@#$%^&*)</label>
             </div>
             <button id="generate-btn">Сгенерировать пароль</button>
-            <input type="text" id="generated-password" readonly>
-            <div class="copy-container">
+            
+            <div class="output-container">
+                <input type="text" id="generated-password" readonly>
                 <button id="copy-btn">
                     <span class="tooltip-text">Скопировать пароль</span>
                     &#128203;
                 </button>
             </div>
+            
             <div id="password-strength-bar"></div>
         </section>
 
         <!-- Проверка -->
         <section id="password-checker">
             <h2>Проверка сложности пароля</h2>
-            <input type="text" id="password-input" placeholder="Введите пароль для проверки">
+            <div class="input-container">
+                <button id="clear-btn" title="Очистить поле">
+                    &#128465;
+                </button>
+                <input type="text" id="password-input" placeholder="Введите пароль для проверки">
+            </div>
             <button id="check-btn">Проверить сложность</button>
             <div id="password-strength"></div>
             <ul id="suggestions"></ul>
