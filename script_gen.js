@@ -63,7 +63,7 @@ function checkPasswordStrength() {
 
 document.getElementById('check-btn').addEventListener('click', checkPasswordStrength);
 
-// Копирование пароля с изменением сообщения
+// Копирование пароля
 document.getElementById('copy-btn').addEventListener('click', function () {
     const password = document.getElementById('generated-password');
     password.select();
@@ -73,11 +73,11 @@ document.getElementById('copy-btn').addEventListener('click', function () {
         tooltip.textContent = 'Пароль скопирован';
         setTimeout(() => {
             tooltip.textContent = 'Скопировать пароль';
-        }, 2000); // Через 2 секунды сообщение вернется на исходное
+        }, 2000); 
     });
 });
 
-// Очистка поля ввода пароля для проверки
+// Очистка поля ввода
 document.getElementById('clear-btn').addEventListener('click', function () {
     document.getElementById('password-input').value = '';
     document.getElementById('password-strength').textContent = '';
