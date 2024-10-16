@@ -226,4 +226,6 @@ button:hover {
 .suggestions .password-strenght {
     margin-top: 10px
 }
-@media
+@media (max-wight: 1200px){
+    overflow-x:hidden
+}
