@@ -223,8 +223,6 @@ button:hover {
     margin-top: 10px;
     transition: width 0.5s, background-color 0.5s;
 }
-
-/* Отступ между полем для ввода пароля и советами */
-#password-checker #suggestions {
-    margin-top: 15px;
+.suggestions {
+    margin-top:15px
 }
