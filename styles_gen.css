@@ -223,6 +223,7 @@ button:hover {
     margin-top: 10px;
     transition: width 0.5s, background-color 0.5s;
 }
-.suggestions {
-    margin-top:15px
+.suggestions .password-strenght {
+    margin-top: 10px
 }
+@media
