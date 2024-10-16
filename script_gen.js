@@ -28,7 +28,7 @@ function generatePassword() {
 
 document.getElementById('generate-btn').addEventListener('click', generatePassword);
 
-// Проверка
+// Проверка сложности пароля
 function checkPasswordStrength() {
     const password = document.getElementById('password-input').value;
     const strengthDisplay = document.getElementById('password-strength');
@@ -63,13 +63,25 @@ function checkPasswordStrength() {
 
 document.getElementById('check-btn').addEventListener('click', checkPasswordStrength);
 
+// Копирование пароля с изменением сообщения
 document.getElementById('copy-btn').addEventListener('click', function () {
     const password = document.getElementById('generated-password');
     password.select();
     password.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(password.value).then(() => {
-        alert('Пароль скопирован');
+        const tooltip = document.querySelector('.tooltip-text');
+        tooltip.textContent = 'Пароль скопирован';
+        setTimeout(() => {
+            tooltip.textContent = 'Скопировать пароль';
+        }, 2000); // Через 2 секунды сообщение вернется на исходное
     });
+});
+
+// Очистка поля ввода пароля для проверки
+document.getElementById('clear-btn').addEventListener('click', function () {
+    document.getElementById('password-input').value = '';
+    document.getElementById('password-strength').textContent = '';
+    document.getElementById('suggestions').innerHTML = '';
 });
 
 function updateStrengthBar(password) {
